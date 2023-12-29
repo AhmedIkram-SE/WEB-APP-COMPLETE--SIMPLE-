@@ -14,13 +14,13 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Headers", "Content-Type");
   next();
 });
-app.use(cors(
-  {
-    "origin":["https://web-app-complete-frontend.vercel.app"],
-    "methods":["GET,POST,PUT,DELETE"],
-    credentials:true
-  }
-)):
+app.use(
+  cors({
+    origin: ["https://web-app-complete-frontend.vercel.app"],
+    methods: ["GET,POST,PUT,DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 let database = mongoose.connect(
