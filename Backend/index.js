@@ -8,13 +8,14 @@ const {
   deleteStudent,
   updateStudent,
 } = require("./StudentsOperations");
+app.use(cors(
+  {
+    "origin":["https://web-app-complete-frontend.vercel.app"],
+    "methods":["GET,POST,PUT,DELETE"],
+    credentials:true
+  }
+)):
 app.use(express.json());
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*"); // or specify a specific origin
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
 
 let database = mongoose.connect(
   "mongodb+srv://ahmedikram2003:12e51055@cluster0.pczboo8.mongodb.net/University?retryWrites=true&w=majority"
