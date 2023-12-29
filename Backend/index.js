@@ -16,7 +16,9 @@ app.use((req, res, next) => {
   next();
 });
 
-let database = mongoose.connect("mongodb://localhost:27017/University");
+let database = mongoose.connect(
+  "mongodb+srv://ahmedikram2003:12e51055@cluster0.pczboo8.mongodb.net/University?retryWrites=true&w=majority"
+);
 
 app.get("/", function (req, res) {
   res.send("Hello World");
