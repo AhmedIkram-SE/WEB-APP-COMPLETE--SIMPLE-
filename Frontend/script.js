@@ -9,7 +9,7 @@ $(function () {
   but6.addEventListener("click", putData);
   //but4.addEventListener('click', deleteData);
 });
-const Url = "http://localhost:3030/api/students/";
+const Url = "https://web-app-complete-api.vercel.app/api/students/";
 
 async function fetchData() {
   const response = await fetch(Url, {
