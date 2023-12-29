@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const cors=require("cors")
+const cors = require("cors");
 const mongoose = require("mongoose");
 const {
   createStudent,
@@ -9,18 +9,18 @@ const {
   deleteStudent,
   updateStudent,
 } = require("./StudentsOperations");
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*"); // or specify a specific origin
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
-app.use(
-  cors({
-    origin: ["https://web-app-complete-frontend.vercel.app"],
-    methods: ["GET,POST,PUT,DELETE"],
-  })
-);
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*"); // or specify a specific origin
+//   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+//   res.header("Access-Control-Allow-Headers", "Content-Type");
+//   next();
+// });
+// app.use(
+//   cors({
+//     origin: ["https://web-app-complete-frontend.vercel.app"],
+//     methods: ["GET,POST,PUT,DELETE"],
+//   })
+// );
 app.use(express.json());
 
 let database = mongoose.connect(
