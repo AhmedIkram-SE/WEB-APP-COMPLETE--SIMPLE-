@@ -18,7 +18,6 @@ app.use(
   cors({
     origin: ["https://web-app-complete-frontend.vercel.app"],
     methods: ["GET,POST,PUT,DELETE"],
-    credentials: true,
   })
 );
 app.use(express.json());
